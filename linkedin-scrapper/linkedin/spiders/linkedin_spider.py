@@ -37,18 +37,18 @@ class LinkedinSpider(BaseSpider):
         for current in currents:
             c1 = current.select('text()').extract()[0].strip()
             c2 = " at "
-            c3_1 = current.select('a/span[@class="org summary"]/text()').extract() 
+            c3_1 = current.select('a/span[@class="org summary"]/text()').extract()
             if len(c3_1) == 0:
                 c3_1 = current.select('text()').extract()
             c3 = c3_1[0].strip() if len(c3_1) > 0 else ""
-            user['current'].append(c1 + c2 + c3) 
+            user['current'].append(c1 + c2 + c3)
 
         # past positions
         pasts = hxs.select('//ul[@class="past"]/li')
         for past in pasts:
             p1 = past.select('text()').extract()[0].strip()
             p2 = " at "
-            p3_1 = past.select('a/span[@class="org summary"]/text()').extract() 
+            p3_1 = past.select('a/span[@class="org summary"]/text()').extract()
             if len(p3_1) != 0:
                 p3 = p3_1[0].strip()
             else:
@@ -57,8 +57,7 @@ class LinkedinSpider(BaseSpider):
                     p3 = p3_1[1].strip()
                 else:
                     p3 = ""
-            # p3 = past.select('text()').extract()[1].strip() 
-            user['past'].append(p1 + p2 + p3) 
+            user['past'].append(p1 + p2 + p3)
 
         item['user'] = user
         return item
