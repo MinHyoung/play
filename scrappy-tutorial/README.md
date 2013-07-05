@@ -10,16 +10,16 @@
 - Request
 - Response
 - Selectors
-- Feed Exports (json | csv | XML | ..)
+- Feed Exports (json | csv | xml | ..)
 - Signals
 - Contracts
 
 - scrapy.contrib.spiders.Spider
- |- BaseSpider
- |- CrawlSpider
- |- XMLFeedSpider
- |- CSVFeedSpider
- |- SitemapSpider
+ - BaseSpider
+ - CrawlSpider
+ - XMLFeedSpider
+ - CSVFeedSpider
+ - SitemapSpider
  start_urls = []
  start_requests()
  parse() - default calllback for Requests; generates more Request or Item or an iterable of both
