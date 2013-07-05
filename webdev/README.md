@@ -1,6 +1,10 @@
 ## webdev
 
-play with web development - js, css, html
+- play with web development - js, css, html
+- *terminology*
+ - j* : js code
+ - c* : css code
+ - s* : snippet
 
 ## references
 
