@@ -1,0 +1,29 @@
+/* page styles */
+body {
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    width: 80%;
+    margin: 0 auto;
+}
+
+div {
+    height: 25em;
+    margin: 2em;
+    position: relative;
+}
+
+div:after {
+    content: "I'm behind the div!";
+    font-size: 2em;
+    position: absolute;
+    top: 42%;
+    left: 25%;
+    z-index: -1;
+}
+
+/* color values */
+/* try rgb(), rgba(), hsl(), hsla(), ... */
+/* try keywords - lightblue, sandybrown, tomato */ 
+div {
+    background-color: hsla(130, 50%, 35%, 0.7);    
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modifying Attributes</title>
+  <style type="text/css">
+    .valid {
+      color: green;
+      border: 2px solid green;
+    }
+    .error {
+      color: red;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+
+  <p>
+    <input type="text" class="required" id="name" value="Andrew">
+  </p>
+
+  <p>
+    <input type="text" class="required" id="company" value="Treehouse Island, Inc">
+  </p>
+  
+  <p>
+    <input type="text" class="" id="phone" value="555-123-4567">
+  </p>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+  function isValidEmail(email) {
+    return email.indexOf("@") != -1;
+  }
+
+  // creates a method called 'requiredValues' that returns all
+  // inputs with required values
+  function requiredValues() {
+    var values = new Array();
+    $(".required").each(function() {
+      values.push($(this).val());
+    });
+    return values;
+  }
+
+  // creates a method called 'containsBlanks' that returns true
+  // if any inputs with class 'required' has empty string in,
+  // false if not
+  function containsBlanks() {
+    var values = new Array();
+    $(".required").each(function() {
+      values.push($(this).val() == "");
+    });
+    return values.indexOf(true) != -1;
+  }
+
+  var values = $(".required").map(function(){ return $(this).val(); });
+  console.log("inArray:",  $.inArray("Andrew", values));
+  console.log({"alex": 40});
+</script>
+</body>
+</html>

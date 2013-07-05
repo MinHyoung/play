@@ -1,0 +1,131 @@
+body {
+    font-size: 1em;
+    line-height: 1em;
+    padding: 10px 20px;
+    background-color: #BDD4DE;
+}
+
+img {
+    margin: 10px 20px 0 0;
+}
+
+ul {
+    line-height: 1.5em;
+}
+
+/* substring matching attribute selector */
+
+/* begins with selector */
+a[href^="https://"] {
+    color: green;
+}
+
+a[href^="mailto:"] {
+    color: #FFF;
+    background-color: red;
+}
+
+/* wnds with selector */
+a[href$=".png"] {
+    background: url('forest.png') no-repeat 0 2px;
+    padding-left: 25px;
+}
+a[href$=".jpg"] {
+    background: url('ocean.jpg') no-repeat 0 1px;
+    padding-left: 25px;
+}
+
+/* contains selector */
+img[src*="for"] {
+    border: 5px solid #000;
+}
+
+/* structural pseudo clases */
+/* try nth-child(even) */
+/* try nth-child(odd) */
+/* try nth-child(9) */
+/* try nth-child(an+b) expressions. ex nth-child(2n+2) 0<=n<=.. */
+/* try nth-child(-n+5) */
+/* try nth-last-child(3n + 1) */
+li:nth-child(2n+4) {
+    color: #FFF;
+    background-color: #000;
+}
+
+/* try nth-last-of-type(3) */
+div:nth-of-type(2) {
+    background-color: blue;
+}
+
+span:only-of-type {
+    color: blue;
+}
+
+em:only-of-type {
+    color: purple;
+}
+
+:root {
+    background-color: #BDD4DE;
+}
+
+:target {
+    background-color: #EA2E49;
+}
+
+/*
+:empty {
+    background-color: green;
+}
+*/
+
+:enabled {
+    background-color: orange;
+}
+
+:disabled {
+    background-color: #CCC;
+}
+
+input[type="radio"]:checked + label {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+input:not([type="submit"]) {
+    border: 2px solid #000;
+    background-color: #FFF;
+}
+
+/* psedo element */
+.intro:first-line {
+    font-weight: bold;
+    color: #77c4d3;
+}
+
+.intro:first-letter {
+    font-size: 4em;
+    padding: 0 10px;
+    margin: 10px 15px 0 0;
+    background-color: #FFF;
+    float: left;
+}
+
+.phone:before {
+    content: "\2706";
+    font-size: 1.5em;
+}
+
+.png:after {
+    content: "(PNG)";
+}
+
+h2:before {
+    content: " ";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #ea2e49;
+    border-radius: 20px;
+    margin: 15px 15px 0 0;
+}

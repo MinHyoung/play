@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modifying Attributes</title>
+  <style type="text/css">
+    .valid {
+      color: green;
+      border: 2px solid green;
+    }
+    .error {
+      color: red;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <input type="text" class="error" id="name" value="Andr00">
+  </p>
+  <p>
+    <input type="text" id="email" value="andrew@teamtreehouse.com">
+  </p>
+  <p>
+    Accept conditions <input type="checkbox" id="accept">
+  </p>
+  <p>
+    <input type="submit" value="Submit" disabled="disabled" id="submit">
+  </p>
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+  $("#email").addClass("valid");
+  $("#name").removeClass("error");
+  $("#accept").attr("checked", "checked");
+  $("#submit").removeAttr("disabled");
+</script>
+</body>
+</html>
