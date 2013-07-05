@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+
+  /* When setting ﬂexible margin on an element, your context is the width of the element’s container.
+  When setting ﬂexible padding on an element, your context is the width of the element itself. */
+
+  p {
+    margin: 0;
+  }
+  body {
+    color: #fff;
+  }
+  .container, .icing, .cake, .filling {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+  }
+  .container {
+    max-width: 700px;
+  }
+  .icing {
+    background-color: #B4C34F;
+    width: 100%; /*700px*/
+    padding: 10px;
+  }
+  .cake {
+    background-color: #f8748f;
+    width: 85.714285714%; /*600px*/
+    margin: 1.428571429%;
+    padding: 1.66666666%; /* 10px */
+  }
+  .filling {
+    background-color: #4FB69F;
+    width: 83.33333333%; /*500px*/
+    margin: 1.6666666666%;
+    padding: 2%; /* 10px */
+  }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="icing">
+      <p>Icing</p>
+      <div class="cake">
+        <p>Cake</p>
+        <div class="filling">
+          <p>Filling</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

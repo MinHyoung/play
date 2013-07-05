@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="//fonts.googleapis.com/css?family=Nunito:400,300,700" rel="stylesheet" type="text/css">
+  <style>
+    body {
+      background-color: #420600;
+      color: #FAF3BC;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1em;
+      font-weight: 100;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1 {
+      font-weight: 100;
+      font-size: 2.25em;
+      margin: 5% 0;
+    }
+    h2 {
+      font-weight: 100;
+      font-size: 1.500em;
+      color: #B4C34F;
+    }
+    h3 {
+      font-weight: 100;
+      font-size: 1.25em;
+      color: #4FB69F;
+    }
+    h2, h3 {
+      margin: 0;
+      padding: 0;
+    }
+    p {
+      margin: 5% 0;
+    }
+    strong {
+      font-weight: 300;
+      color: #B22316;
+    }
+    div {
+      box-sizing:border-box;
+      -moz-box-sizing:border-box; /* Firefox */
+      -webkit-box-sizing:border-box; /* Safari */
+    }
+    #container {
+      max-width: 1000px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .menu {
+      width: 60%;
+      margin: 0 0 2% 0;
+      float: left;
+    }
+
+    ul.prices {
+      font-size: .75em;
+      list-style: none;
+      padding: 2% 0;
+      margin: 0;
+    }
+    .prices li {
+      float: left;
+      width: 33.3333333%;
+    }
+
+    .cupcake {
+      border-bottom: 1px dotted #FAF3BC;
+      padding: 5% 0;
+    }
+    .cupcake p {
+      margin: 0;
+    }
+    .cupcake:nth-child(2) {
+      border-top: 1px dotted #FAF3BC;
+    }
+    .contact {
+      width: 35%;
+      margin: 5% 0;
+      padding: 3%;
+      float: right;
+      background-color: #2e0400;
+      border-radius: 15px;
+
+    }
+    .contact span {
+      color: #B22316;
+      font-weight: 600;
+    }
+
+    /* Mobile ----------- */
+    @media screen and (max-width : 480px) {
+      .menu {
+        width: 100%;
+      }
+
+      .contact {
+        width: 100%;
+      }
+
+      .cupcake img {
+        display: none;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="menu">
+      <h1>Cupcake Menu</h1>
+      <div class="cupcake">
+        <h2>Bacon Me Crazy</h2>
+        <p>Our infamous Bacon Cupcake has a deliciously moist vanilla cake, creamy cream cheese icing, topped with bacon and maple glaze.</p>
+        <img src="cupcake.jpg" alt="Smells Like Bakin">
+          <ul class="prices">
+            <li>1 Cupcake: <strong>$3</strong></li>
+            <li>1/2 Dozen: <strong>$12</strong></li>
+            <li>1 Dozen: <strong>$19</strong></li>
+          </ul>
+      </div>
+
+      <div class="cupcake">
+        <h2>Jalepeno So Spicy</h2>
+        <p>This spicy cupcake has a chocolatey cake with a kick, creamy vanilla lime icing, and topped with a lime wedge.</p>
+          <ul class="prices">
+            <li>1 Cupcake: <strong>$4</strong></li>
+            <li>1/2 Dozen: <strong>$18</strong></li>
+            <li>1 Dozen: <strong>$24</strong></li>
+          </ul>
+      </div>
+
+      <div class="cupcake">
+        <h2>Avocado Chocolate</h2>
+        <p>Made with chocolate cake, avocado icing, and topped with walnuts, this cupcake will kick your tastebuds into fiesta mode! </p>
+          <ul class="prices">
+            <li>1 Cupcake: <strong>$4</strong></li>
+            <li>1/2 Dozen: <strong>$18</strong></li>
+            <li>1 Dozen: <strong>$24</strong></li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h3>Custom Orders</h3>
+      <p>We are always willing to create new flavors! For custom orders and catering options, please contact Smells Like Bakin'</p>
+      <p>Call us: <span>1-800-CUPCAKE</span></p>
+    </div>
+
+  </div>
+</body>
+</html>
+
