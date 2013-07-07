@@ -6,6 +6,15 @@
  - c* : css code
  - s* : snippet
 
+## bootstrap
+
+- from http://www.bootstrapcdn.com/
+
+```html
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+```
+
 ## references
 
 - css: http://ethanmarcotte.com/
