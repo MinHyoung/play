@@ -8,7 +8,7 @@
 
 ## bootstrap
 
-- from http://www.bootstrapcdn.com/
+- direct download links aka cdn for twitter bootstrap from http://www.bootstrapcdn.com/
 
 ```html
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
@@ -31,6 +31,7 @@
 - reponsive videos: http://fitvidsjs.com/
 - style tiles: http://styletil.es/
 - mobile first: Mobile First by Luke Wroblewski
+- why cdn: http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
 
 ## notes
 
