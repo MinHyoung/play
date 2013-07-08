@@ -4,6 +4,7 @@
 - *terminology*
  - j* : js code
  - c* : css code
+ - b* : boostrap code
  - s* : snippet
 
 ## bootstrap
