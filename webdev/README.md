@@ -16,6 +16,9 @@
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 ```
 
+- icons by glyphicons: http://twitter.github.io/bootstrap/base-css.html#icons
+- glyphicons: http://glyphicons.com/
+
 ## references
 
 - css: http://ethanmarcotte.com/
