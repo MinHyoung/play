@@ -12,7 +12,11 @@
 - direct download links aka cdn for twitter bootstrap from http://www.bootstrapcdn.com/
 
 ```html
+<!-- Complete CSS (Responsive, With Icons) -->
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+
+<!-- Complete CSS (Without Icons) -->
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
