@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Forms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <form class="form-horizontal">
+      <fieldset>
+        <legend>Legend</legend>
+        <label for="name">Label Name</label>
+        <input type="text" id="name" placeholder="Type something...">
+        <span class="help-Inline">Inline help text.</span>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+        <label class="checkbox" for="checkbox">
+          <input type="checkbox" id="checkbox">Check me out
+        </label>
+        <button type="submit" class="btn">Submit</button>
+      </fieldset>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form class="form-search">
+      <input type="text" class="input-xxlarge search-query">
+      <button type="submit" class="btn">Search</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form class="form-inline">
+      <input type="text" class="input-small" placeholder="Email">
+      <input type="password" class="input-small" placeholder="Password">
+      <label class="checkbox">
+        <input type="checkbox">Remember Me
+      </label>
+      <button type="submit" class="btn">Sign in</button>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form class="form-horizontal">
+      <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+          <input type="text" id="inputEmail" placeholder="Email">
+        </div>
+      </div>
+      <div class="control-group">
+        <label class="control-label" for="inputPassword">Password</label>
+        <div class="controls">
+          <input type="password" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <label class="checkbox">
+            <input type="checkbox">Remember Me
+          </label>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button tye="submit" class="btn">Sign in</button>
+      </div>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <label class="checkbox">
+      <input type="checkbox" value="">
+      Option one is this and that-be sure to inlcude why it's great.
+    </label>
+
+    <label class="radio">
+      <input type="radio" name="optionsRadios" id="optionsRadio1" value="option1" checked>
+      Option one is this and that-be sure to include why it's great.
+    </label>
+
+    <label class="radio">
+      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+      Option two can be something else, and selecting will deselect option one
+    </label>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <label for="option1" class="checkbox inline">
+      <input id="option1" type="checkbox" id="inlineCheckbox1" value="option1"> 1
+    </label>
+    <label for="option2" class="checkbox inline">
+      <input id="option2" type="checkbox" id="inlineCheckbox2" value="option2"> 2
+    </label>
+    <label for="option3" class="checkbox inline">
+      <input id="option3" type="checkbox" id="inlineCheckbox3" value="option3"> 3
+    </label>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <select>
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+
+
+    <select multiple="multiple">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="input-prepend">
+      <span class="add-on">@</span>
+      <input class="span2" id="prependInput" type="text" placeholder="Username">
+    </div>
+    <div class="input-append">
+      <input class="span2" id="appendedInput" type="text">
+      <span class="add-on">.00</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="input-prepend input-append">
+      <span class="add-on">$</span>
+      <input class="span2" id="appendedPrependedInput" type="text">
+      <span class="add-on">.00</span>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="input-append">
+      <input class="span2" id="appendedInputButtons" type="text">
+      <button class="btn" type="button">Search</button>
+      <button class="btn" type="button">Options</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form class="form-search">
+      <div class="input-append">
+        <input type="text" class="span2 search-query">
+        <button type="submit" class="btn">Search</button>
+      </div>
+      <div class="input-prepend">
+        <button type="submit" class="btn">Search</button>
+        <input type="text" class="span2 search-query">
+      </div>
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <form class="input-append">
+      <input type="text" class="span12">
+      <span class="add-on"><i class="icon-search"></i></span>
+    </form>
+  </div>
+  
+  <hr>
+  
+  <div class="container">
+    <form>
+      <input class="input-mini" type="text" placeholder="input-mini"> 
+    </form>
+    <form>
+      <input class="input-small" type="text" placeholder="input-small">
+    </form>
+    <form>
+      <input class="input-medium" type="text" placeholder="input-medium"> 
+    </form>
+    <form>
+      <input class="input-large" type="text" placeholder="input-large" disabled> 
+    </form>
+    <form>
+      <input class="input-xlarge" type="text" placeholder="input-xlarge">
+    </form>
+    <form>
+      <input class="input-xxlarge" type="text" placeholder="input-xxlarge">
+    </form>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="controls">
+      <input class="span5" type="text" placeholder="span5">
+    </div>
+    <div class="controls controls-row">
+      <input class="span4" type="text" placeholder="span4">
+      <input class="span1" type="text" placeholder="span1">
+    </div>
+    <div class="controls controls-row">
+      <input class="span3" type="text" placeholder="span3">
+      <input class="span2" type="text" placeholder="span2">
+    </div>
+    <div class="controls controls-row">
+      <input class="span2" type="text" placeholder="span2">
+      <input class="span3" type="text" placeholder="span3">
+    </div>
+    <div class="controls controls-row">
+      <input class="span1" type="text" placeholder="span1">
+      <input class="span4" type="text" placeholder="span4">
+    </div>
+  </div>
+
+  <hr>
+  
+  <script src="../bootstrap/js/jquery.js"></script>  
+  <script src="../bootstrap/js/bootstrap.js"></script>
+
+</body>
+</html>
