@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap Autocomplete aka Typeahead</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <style>
+  body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  }
+  .typeahead_wrapper { 
+    display: block;
+    height: 30px;
+  }
+  .typeahead_photo { 
+    float: left; 
+    max-width: 30px; 
+    max-height: 25px; 
+    margin-top: 5px;
+    margin-right: 5px;
+  }
+  .typeahead_labels { 
+    float: left; 
+    height: 20px;
+  }
+  .typeahead_primary { 
+    font-weight: bold;
+  }
+  .typeahead_secondary {
+    font-size: .8em;
+    margin-top: -5px;
+  }
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="span12">
+        <form>
+          <input type="text" class="span6 bondTypeahead" placeholder="Who was your favorite James Bond?" autocomplete="off" data-provide="typeahead" />
+          <br/>
+          <input type="text" class="span1" name="bondId" id="bondId" value="" />
+        </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <p>In this example I'll ask you to suspend your disbelief momentarily: Pretend that the second text input is actually a hidden form field. Functionally they are equivalent, the only difference is that you can see the textbox, making it better for demonstration purposes.</p>
+        <p>Visually, the user selects their favorite Bond by name. But under the hood, we're saving the selected Bond Id so that we don't have to look it up after submission. The name would be included in the form post, too, but you can just ignore that.</p>
+        <p>Furthermore requests to the "api" are only made after user input has stopped for 300ms. If you type slowly a request is made for every keypress, but if you type relatively quickly then less requests are made. This is considered a good practice -- fewer requests less frequently will save in total bandwidth usage and results will likely appear faster.</p>
+        <p>This is accomplished using the debounce function in the <a href="http://underscorejs.org">underscore.js</a> library.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+  <script src="//underscorejs.org/underscore-min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

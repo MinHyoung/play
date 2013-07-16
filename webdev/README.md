@@ -7,9 +7,7 @@
  - b* : boostrap code
  - s* : snippet
 
-## bootstrap
-
-- direct download links aka cdn for twitter bootstrap from http://www.bootstrapcdn.com/
+## cdn (direct download links)
 
 ```html
 <!-- Complete CSS (Responsive, With Icons) -->
@@ -18,9 +16,12 @@
 <!-- Complete CSS (Without Icons) -->
 <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
 
-<script src="http://code.jquery.com/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
 <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
 ```
+
+## bootstrap
 
 - icons by glyphicons: http://twitter.github.io/bootstrap/base-css.html#icons
 - glyphicons: http://glyphicons.com/
@@ -42,6 +43,7 @@
 - style tiles: http://styletil.es/
 - mobile first: Mobile First by Luke Wroblewski
 - why cdn: http://encosia.com/3-reasons-why-you-should-let-google-host-jquery-for-you/
+- wtfjs.com
 
 ## notes
 
