@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Components</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Le styles -->
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <style>
+  body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="dropdown">
+      <p class="muted">dropdown menu:</p>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block;">
+        <li><a tabindex="-1" href="#">Action</a></li>
+        <li class="disabled"><a tabindex="-1" href="#">Another action</a></li>
+        <li><a tabindex="-1" href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a tabindex="-1" href="#">Separated link</a></li>
+        <li class="dropdown-submenu">
+          <a tabindex="-1" href="#">More options</a>
+          <ul class="dropdown-menu pull right">
+            <li><a tabindex="-1" href="#">Second level action</a></li>
+            <li><a tabindex="-1" href="#">Second level another action</a></li>
+            <li><a tabindex="-1" href="#">Second level something else</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  <br><br><br><br>
+  <br><br><hr>
+
+  <div class="container">
+    <p class="muted">button groups:</p>
+    <div class="btn-group">
+      <button class="btn">Left</button>
+      <button class="btn">Middle</button>
+      <button class="btn">Right</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">button toolbar for multiple button groups:</p>
+    <div class="btn-toolbar"> <div class="btn-group">
+      <a class="btn" href="#"><i class="icon-align-left"></i></a>
+      <a class="btn" href="#"><i class="icon-align-center"></i></a> <a class="btn" href="#"><i class="icon-align-right"></i></a> <a class="btn" href="#"><i class="icon-align-justify"></i></a>
+    </div>
+    <div class="btn-group">
+      <a class="btn" href="#"><i class="icon-italic"></i></a>
+      <a class="btn" href="#"><i class="icon-bold"></i></a>
+      <a class="btn" href="#"><i class="icon-font"></i></a>
+      <a class="btn" href="#"><i class="icon-text-height"></i></a> <a class="btn" href="#"><i class="icon-text-width"></i></a>
+    </div>
+    <div class="btn-group">
+      <a class="btn" href="#"><i class="icon-indent-left"></i></a>
+      <a class="btn" href="#"><i class="icon-indent-right"></i></a> </div>
+    </div>
+  </div>
+
+  <hr>  
+
+  <div class="container">
+    <p class="muted">vertical button groups:</p>
+    <div class="btn-group btn-group-vertical">
+      <button type="button" class="btn"><i class="icon-align-left"></i></button>
+      <button type="button" class="btn"><i class="icon-align-center"></i></button>
+      <button type="button" class="btn"><i class="icon-align-right"></i></button>
+      <button type="button" class="btn"><i class="icon-align-justify"></i></button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">buttons with dropdown</p>
+    <div class="btn-group">
+      <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li> 
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">split button with dropdown</p>
+    <div class="btn-group">
+      <button class="btn btn-danger">Danger</button>
+      <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Another action</a></li> 
+        <li><a href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Separated link</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profie</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Profie</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <ul class="nav nav-pills">
+      <li class="disabled"><a href="#">Home</a></li>
+      <li><a href="#">Profie</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="disabled"><a href="#">Profile</a></li>
+      <li><a href="#">Messages</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <div class="nav nav-tabs">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li class="dropdown"><a class="dropdown-toogle" data-toggle="dropdown" href="#">Dropdown<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li> 
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+        </ul>
+      </li>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">tabbable navigation</p>
+    <div clas="tabbable">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Meats</a></li>
+        <li><a href="#tab2" data-toggle="tab">More Meat</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+          <p>Bacon ipsum dolor sit amet ground round venison leberkas tongue turkey pork chop capicola jerky beef ribs boudin cow andouille sausage shoulder chicken. Shank biltong hamburger ground round andouille drumstick meatball kielbasa short loin beef jowl jerky. Spare ribs hamburger brisket pig, fatback short ribs drumstick ball tip flank jowl. Meatball chicken leberkas, frankfurter ribeye drumstick tongue salami boudin sausage t-bone. Turducken jerky ribeye short loin. Capicola jowl pork chop brisket chuck turducken sirloin.</p>
+        </div>
+        <div class="tab-pane" id="tab2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">tabbable navigation with tab postion - tabs-below, tabs-left, tabs-right</p>
+    <div class="tabbable tabs-left">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Section A</a></li>
+        <li><a href="#tab2" data-toggle="tab">Section B</a></li>
+        <li><a href="#tab3" data-toggle="tab">Section C</a></li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+          <p>I'm in Section A</p>
+        </div>
+        <div class="tab-pane" id="tab2">
+          <p>I'm in Section B</p>
+        </div>
+        <div class="tab-pane" id="tab3">
+          <p>I'm in Section C</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">navigation lists</p>
+    <ul class="nav nav-list">
+      <li class="nav-header">List Header</li>
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li><a href="#">Applications</a></li>
+      <li class="nav-header">Another List Header</li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Settings</a></li>
+      <li class="divider"></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">navbar with navbar components - brand and nav links</p>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <a class="brand" href="#">Title</a>
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#">First Link</a></li>
+          <li><a href="#">Second Link</a></li>
+          <li class="divider-vertical"></li>
+          <li><a href="#">Thrid Link</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">forms in navbar</p>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <form class="navbar-form pull-left">
+          <input type="text" class="span2" id="fname">
+          <button type="submit" class="btn btn-primary">submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">search form in navbar</p>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query span6" placeholder="Search">
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">navbar-fixed-top, navbar-fixed-bottom and navbar-static-top</p>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">responsive navbar</p>
+    <div class="navbar navbar-inverse">
+
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <a class="brand" href="#">Project name</a>
+
+          <div class="nav-collapse collapse">
+
+            <ul class="nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Link</a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li class="nav-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-search pull-left" action="">
+              <input type="text" class="search-query span2" placeholder="Search">
+            </form>
+            <ul class="nav pull-right">
+              <li><a href="#">Link</a></li>
+              <li class="divider-vertical"></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">breadcrumbs</p>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a> <span class="divider">/</span></li>
+      <li><a href="#">2012</a> <span class="divider">/</span></li>
+      <li><a href="#">December</a> <span class="divider">/</span></li>
+      <li><a href="#">5</a></li>
+    </ul>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a> <span class="divider">&rarr;</span></li>
+      <li><a href="#">Dinner Menu</a> <span class="divider">&rarr;</span></li>
+      <li><a href="#">Specials</a> <span class="divider">&rarr;</span></li>
+      <li><a href="#">Steaks</a></li>
+    </ul>
+    <ul class="breadcrumb">
+      <li><a href="#">Home</a> <span class="divider">&raquo;</span></li>
+      <li><a href="#">Electronics</a> <span class="divider">&raquo;</span></li>
+      <li><a href="#">Raspberry Pi</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">pagination; try - pagination-left, pagination-centered, pagination-right, pagination-mini, pagination-small, pagination-large</p>
+    <div class="pagination pagination-centered">
+      <ul>
+        <li><a href="#">&laquo;</a></li>
+        <li class="disabled"><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>        
+        <li><a href="#">&raquo;</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">pager</p>
+    <ul class="pager">
+      <li><a href="#">Previous</a></li>
+      <li><a href="#">Next</a></li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">pager with previous and next class</p>
+    <ul class="pager">
+      <li class="previous">
+        <a href="#">&larr; Older</a>
+      </li>
+      <li class="next">
+        <a href="#">Newer &rarr;</a>
+      </li>
+    </ul>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">labels</p>
+    <span class="label">Default</span>
+    <span class="label label-success">Success</span>
+    <span class="label label-warning">Warning</span>
+    <span class="label label-important">Important</span>
+    <span class="label label-info">Info</span>
+    <span class="label label-inverse">Inverse</span>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">badges</p>
+    <span class="badge">1</span>
+    <span class="badge badge-success">2</span>
+    <span class="badge badge-warning">4</span>
+    <span class="badge badge-important">6</span>
+    <span class="badge badge-info">8</span>
+    <span class="badge badge-inverse">10</span>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">hero unit</p>
+    <div class="hero-unit">
+      <h1>Hello, World!</h1>
+      <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+      <p><a class="btn btn-primary btn-large" href="#">Learn more</a></p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">page header</p>
+    <div class="page-header">
+      <h1>Example page header <small>Subtext for header</small></h1>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="container">
+    <p class="muted">thumbnails</p>
+    <a href="#" class="thumnail">
+      <img alt="Kittens!" style="" src="http://placekitten.com/300/250">
+    </a>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+</body>
+</html>
