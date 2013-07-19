@@ -1,0 +1,29 @@
+{
+    "user1": {
+        "gender": "MALE",
+        "name": {
+            "first": "Joe",
+            "last": "Sixpack"
+        },
+        "userImage": "Rm9vYmFyIQ==",
+        "verified": false
+    },
+    "user2": {
+        "gender": "FEMALE",
+        "name": {
+            "first": "Mary",
+            "last": "Goldstein"
+        },
+        "userImage": "Rm9vYmFyIQ==",
+        "verified": true
+    },
+    "user3": {
+        "gender": "MALE",
+        "name": {
+            "first": "Geoff",
+            "last": "Yang"
+        },
+        "userImage": "Rm9vYmFyIQ==",
+        "verified": false
+    }
+}
