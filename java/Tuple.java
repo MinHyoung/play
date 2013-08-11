@@ -16,6 +16,11 @@ public class Tuple<T1, T2> {
         this.second = second;
     }
 
+    @Override
+    public String toString() {
+        return "(" + first + ", " + second + ")";
+    }
+
     public static void main(String[] args) {
         new Tuple<String, Integer>("Hello", 5);
         new Tuple<Collection<String>, String>(Arrays.asList("Hello", "World"), "!");

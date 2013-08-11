@@ -9,14 +9,13 @@ import play.test.WithApplication;
 import java.util.List;
 
 import static org.junit.Assert.*;
-import static play.test.Helpers.fakeApplication;
-import static play.test.Helpers.inMemoryDatabase;
+import static play.test.Helpers.*;
 
 public class ModelsTest extends WithApplication {
 
     @Before
     public void setUp() {
-        start(fakeApplication(inMemoryDatabase()));
+        start(fakeApplication(inMemoryDatabase(), fakeGlobal()));
     }
 
     @Test
