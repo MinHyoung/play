@@ -30,14 +30,13 @@ $(function() {
         });
     }, 300);
 
-    $('.bondTypeahead').focus();
-
     $('.bondTypeahead').typeahead({
         source: function(query, process) {
             // here we pass the query and process the callback arguments to the throttled function
             throttledRequest(query, process);
         },
         updater: function(selectedName) {
+            console.log(selectedName);
             // save the id value into the hidden field
             $('#bondId').val(bondObjs[selectedName].id);
             // return the string you want to go into the textbox (the name)
@@ -57,7 +56,6 @@ $(function() {
             html.push('<div class="typeahead_secondary">' + bond.films[0] + '</div>');
             html.push('</div>');
             html.push('</div>');
-
             return html.join('');
         },
     });
