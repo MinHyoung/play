@@ -7,6 +7,7 @@ import java.net.URLEncoder;
  * Reference:
  * - http://blog.lunatech.com/2009/02/03/what-every-web-developer-must-know-about-url-encoding
  * - http://illegalargumentexception.blogspot.com/2009/12/java-safe-character-handling-and-url.html
+ * - http://wiki.apache.org/HttpComponents/FrequentlyAskedApplicationDesignQuestions
  *
  * Terminology:
  *  - URI
@@ -36,6 +37,17 @@ import java.net.URLEncoder;
  *  "+"  - %2B
  *  "/"  - %2F
  *  "&"  - %26
+ *
+ *  The following reserved characters in the query string (the part after question mark) must be
+ *  URL escaped. URL-escaping for the query part can be handed by java.net.URI and
+ *  org.apache.commons.httpclient.URI
+ *   "="
+ *   "&"
+ *   "%"
+ *   ":"
+ *   "/"
+ *   "+"
+ *
  *
  * Takeaways:
  *  - Reserved characters are different for each part.
