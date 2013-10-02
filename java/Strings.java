@@ -6,9 +6,12 @@ import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringTest {
+public class Strings {
 
     public static void main(String[] args) throws Exception {
+        String x = "hello";
+        String y = new String("hello");
+        String[] xs = new String[]{"hello"};
 
         boolean result = "hello".startsWith("");
         System.out.println(result);

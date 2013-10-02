@@ -3,6 +3,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Map;
  * - jackson-core
  * See: http://wiki.fasterxml.com/JacksonDownload
  */
-public class JacksonTest {
+public class Jacksons {
 
     public static class User {
         public enum Gender {
@@ -31,11 +32,22 @@ public class JacksonTest {
         public byte[] userImage;
     }
 
+
+    public static class Field {
+        public String type;
+        public List<String> operators;
+        public List<String> values;
+        public String label;
+    }
+
     public static void main(String[] args) throws Exception {
         ObjectMapper mapper = new ObjectMapper(); // can reuse, share globally
 
-        // 1. full data binding of pojo
-        // deserialize json to pojo
+        /**
+         * 1. full data binding of pojo
+         *
+         * deserialize json to pojo
+         */
         User user = mapper.readValue(new File("data/user.json"), User.class);
         //  serialize pojo to json
         mapper.writeValue(new File("data/user-pojo.json"), user);
@@ -78,5 +90,24 @@ public class JacksonTest {
                 new TypeReference<Map<String, User>>() {
                 });
         mapper.writeValue(new File("data/user-generics.json"), result);
+
+        Map<String, Map<String, Map<String, Object>>> config = mapper.readValue(new File("crunchbase.json"),
+                new TypeReference<Map<String, Map<String, Map<String, Object>>>>() {
+                });
+        mapper.writeValue(new File("output.json"), config);
+
+        for (Map.Entry<String, Map<String, Map<String, Object>>> configEntry : config.entrySet()) {
+            String table = configEntry.getKey();
+            Map<String, Map<String, Object>> tableParams = configEntry.getValue();
+            System.out.println(table + " -->");
+
+            for (Map.Entry<String, Object> fieldEntry : tableParams.get("fields").entrySet()) {
+                String fieldName = fieldEntry.getKey();
+                Map<String, String> fieldValues = (Map<String, String>) fieldEntry.getValue();
+                System.out.println(fieldName);
+                System.out.println(fieldValues.get("label"));
+            }
+        }
+
     }
 }

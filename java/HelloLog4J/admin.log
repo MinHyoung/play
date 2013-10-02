@@ -1,0 +1,5 @@
+9    [main] DEBUG admin.HelloAdmin   - Hello Admin!
+9    [main] INFO  admin.HelloAdmin   - Hello Admin!
+9    [main] WARN  admin.HelloAdmin   - Hello Admin!
+9    [main] ERROR admin.HelloAdmin   - Hello Admin!
+9    [main] FATAL admin.HelloAdmin   - Hello Admin!

@@ -1,0 +1,3 @@
+0    [main] WARN  main.HelloMain  - Hello Main!
+1    [main] ERROR main.HelloMain  - Hello Main!
+1    [main] FATAL main.HelloMain  - Hello Main!
