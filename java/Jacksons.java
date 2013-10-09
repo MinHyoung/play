@@ -1,3 +1,6 @@
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -91,23 +94,53 @@ public class Jacksons {
                 });
         mapper.writeValue(new File("data/user-generics.json"), result);
 
-        Map<String, Map<String, Map<String, Object>>> config = mapper.readValue(new File("crunchbase.json"),
-                new TypeReference<Map<String, Map<String, Map<String, Object>>>>() {
-                });
-        mapper.writeValue(new File("output.json"), config);
+//        Map<String, Map<String, Map<String, Object>>> config = mapper.readValue(new File("crunchbase.json"),
+//                new TypeReference<Map<String, Map<String, Map<String, Object>>>>() {
+//                });
+//        mapper.writeValue(new File("output.json"), config);
+//
+//        for (Map.Entry<String, Map<String, Map<String, Object>>> configEntry : config.entrySet()) {
+//            String table = configEntry.getKey();
+//            Map<String, Map<String, Object>> tableParams = configEntry.getValue();
+//            System.out.println(table + " -->");
+//
+//            for (Map.Entry<String, Object> fieldEntry : tableParams.get("fields").entrySet()) {
+//                String fieldName = fieldEntry.getKey();
+//                Map<String, String> fieldValues = (Map<String, String>) fieldEntry.getValue();
+//                System.out.println(fieldName);
+//                System.out.println(fieldValues.get("label"));
+//            }
+//        }
 
-        for (Map.Entry<String, Map<String, Map<String, Object>>> configEntry : config.entrySet()) {
-            String table = configEntry.getKey();
-            Map<String, Map<String, Object>> tableParams = configEntry.getValue();
-            System.out.println(table + " -->");
+        JsonFactory jsonFactory = new JsonFactory();
+        JsonParser jsonParser = jsonFactory.createParser(new File("data/search-result.json"));
 
-            for (Map.Entry<String, Object> fieldEntry : tableParams.get("fields").entrySet()) {
-                String fieldName = fieldEntry.getKey();
-                Map<String, String> fieldValues = (Map<String, String>) fieldEntry.getValue();
-                System.out.println(fieldName);
-                System.out.println(fieldValues.get("label"));
+        while (jsonParser.nextToken() != JsonToken.END_OBJECT) {
+//            System.out.println(jsonParser.getCurrentToken());
+
+            if ("docs".equals(jsonParser.getCurrentName())) {
+                jsonParser.nextToken();
+                while (jsonParser.nextToken() != JsonToken.END_ARRAY) {
+                    if (jsonParser.getCurrentToken() == JsonToken.START_OBJECT) {
+                        System.out.println("---");
+                    }
+                    if (jsonParser.getCurrentToken() == JsonToken.FIELD_NAME) {
+                        System.out.print(jsonParser.getCurrentName()+":");
+                    } else if (jsonParser.getCurrentToken() == JsonToken.VALUE_STRING ||
+                            jsonParser.getCurrentToken() == JsonToken.VALUE_NUMBER_INT) {
+                        System.out.println(jsonParser.getText());
+                    }
+                }
             }
+
+            if ("numFound".equals(jsonParser.getCurrentName())) {
+                System.out.println(jsonParser.getText());
+                jsonParser.nextToken();
+                System.out.println(jsonParser.getText());
+            }
+
         }
 
+        jsonParser.close();
     }
 }
