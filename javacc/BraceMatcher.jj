@@ -1,0 +1,48 @@
+PARSER_BEGIN(BraceMatcher)
+
+public class BraceMatcher {
+  public static void main(String[] args) throws Exception {
+    BraceMatcher matcher = new BraceMatcher(System.in);
+    matcher.parse();
+  }
+}
+
+PARSER_END(BraceMatcher)
+
+SKIP :
+{
+  " "
+  | "\t"
+  | "\n"
+  | "\r"
+}
+
+TOKEN :
+{
+  <LBRACE: "{">
+  | <RBRACE: "}">
+}
+
+// root production
+void parse():
+{
+  int count;
+}
+{
+  count = matchedBraces() <EOF>
+  {
+    System.out.println("levels of nesting: " + count);
+  }
+}
+
+// brace matching produciton
+int matchedBraces():
+{
+  int count = 0;
+}
+{
+  <LBRACE> [ count = matchedBraces() ] <RBRACE>
+  {
+    return ++count;
+  }
+}

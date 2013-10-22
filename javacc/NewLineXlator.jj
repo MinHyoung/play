@@ -1,0 +1,133 @@
+PARSER_BEGIN(NewLineXlator)
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class NewLineXlator {
+  public static void main(String[] args) throws Exception {
+    NewLineXlator parser = new NewLineXlator(System.in);
+    parser.parse();
+  }
+}
+PARSER_END(NewLineXlator)
+
+SKIP:
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+}
+
+TOKEN:
+{
+  <ID: ["a"-"z", "A"-"Z", "_"] ( ["a"-"z", "A"-"Z", "_", "0"-"9"] )* >
+| <NUM: ( ["0"-"9"] )+ >
+}
+
+// top level production
+void parse():
+{
+  String s;
+}
+{
+  {
+    System.out.println("please type an expression followed by a ';' or ^D to quit");
+  }
+  (s = expression() ";"
+    {
+      System.out.println(s);
+      System.out.println("please type another expression followed by a ';' or ^D to quit");
+    }
+  )*
+  <EOF>
+}
+
+// expression production
+String expression() :
+{
+  List<String> terms = new ArrayList<String>();
+  String s;
+}
+{
+  s = term() 
+  {
+    terms.add(s);
+  }
+  ("+" s = term() 
+    {
+      terms.add(s);
+    }
+  )*
+  {
+    if (terms.size() == 1) {
+      return terms.get(0);
+    } else {
+      s = "the sum of " + terms.get(0);
+      for (int i = 1; i < terms.size() - 1; i++) {
+        s += ", " + terms.get(i);
+      }
+      if (terms.size() > 2) {
+        s += ",";
+      }
+      s += " and " + terms.get(terms.size() - 1);
+      return s;
+    }
+  }
+}
+
+// term production
+String term():
+{
+  List<String> factors = new ArrayList<String>();
+  String s;
+}
+{
+  s = factor()
+  {
+    factors.add(s);
+  }
+  ("*" s = factor()
+    {
+      factors.add(s);
+    }
+  )*
+  {
+    if (factors.size() == 1) {
+      return factors.get(0);
+    } else {
+      s = "the product of " + factors.get(0);
+      for (int i = 1; i < factors.size() - 1; i++) {
+        s += ", " + factors.get(i);
+      }
+      if (factors.size() > 2) {
+        s += ",";
+      }
+      s += " and " + factors.get(factors.size() - 1);
+      return s;
+    }
+  }
+}
+
+// factor production
+String factor():
+{
+  Token t;
+  String s;
+}
+{
+  t=<ID>
+  {
+    return t.image;
+  }
+| 
+  t=<NUM>
+  {
+    return t.image;
+  }
+| 
+  "(" s=expression() ")"
+  {
+    return s;
+  }
+}

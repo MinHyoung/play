@@ -1,0 +1,129 @@
+PARSER_BEGIN(UQLParser)
+
+import java.lang.StringBuffer;
+
+import java.io.StringReader;
+import java.io.Reader;
+
+public class UQLParser {
+    private static StringBuffer sqlSB;
+
+    public UQLParser(String s) {
+        this((Reader)(new StringReader(s)));
+        sqlSB = new StringBuffer();
+    }
+
+    public String getSQL() {
+        return sqlSB.toString();
+    }
+
+    public static void main(String args[]) {
+        try {
+              String query = args[0];
+              UQLParser parser = new UQLParser(query);
+              parser.parse();
+              System.out.println("\n" + parser.getSQL());
+        } catch(Exception e) {
+              e.printStackTrace();
+        }
+    }
+}
+
+PARSER_END(UQLParser)
+
+/** Skip these characters, they are considered "white space" **/
+SKIP :
+{
+    " "
+    | "\t"
+    | "\r"
+    | "\n"
+
+}
+
+TOKEN: /*RESERVED TOKENS FOR UQL */
+{
+      <AND: "and">
+   |  <OR:  "or">
+   |  <TITLE: "title">
+   |  <ACTOR: "actor">
+   |  <DIRECTOR: "director">
+   |  <KEYWORD: "keyword">
+   |  <LPAREN: "(">
+   |  <RPAREN: ")">
+   |  <EQUALS: "=">
+   |  <NOTEQUAL: "<>">
+}
+
+TOKEN :
+{
+      <STRING : (["A"-"Z", "a"-"z", "0"-"9"])+ >
+    | <QUOTED_STRING: "\"" (~["\""])+ "\"" >
+}
+
+/**
+ *  Top level
+ */
+void parse() :
+{
+}
+{
+    expression()   <EOF>       // a query followed by optional sort
+}
+
+/**
+ * An expression is defined to be a queryTerm followed by zero or more
+ * query terms joined by either an AND or an OR.   If two query terms are joined with
+ * AND then both conditions must be met.  If two query terms are joined with an OR, then
+ * one of the two conditions must be met.
+ */
+void expression() :
+{
+}
+{          queryTerm()
+          (
+            ( <AND>
+              { sqlSB.append("\nINTERSECT\n"); }
+             | <OR>
+              { sqlSB.append("\nUNION\n"); }
+            )
+            queryTerm() )*
+}
+/**
+ * Query terms may consist of a parenthetically
+ * separated expression or may be a query criteria
+ * of the form queryName = something or
+ * queryName <> something.
+ */
+void queryTerm() :
+{
+        Token tSearchName, tComparator, tComparand;
+        String sComparand, table, columnName;
+}
+{
+        (
+            <TITLE>    { table = "movie"; columnName = "title"; }
+          | <ACTOR>    { table = "actor"; columnName = "name"; }
+          | <DIRECTOR> { table = "movie"; columnName = "director"; }
+          | <KEYWORD>  { table = "keyword"; columnName = "keyword"; }
+        )
+
+        (  tComparator=<EQUALS> |  tComparator=<NOTEQUAL> )
+
+        (
+             tComparand=<STRING>       { sComparand = tComparand.image; }
+          | tComparand=<QUOTED_STRING> { sComparand = tComparand.image.substring(1, tComparand.image.length() - 1); }
+        )
+
+        {
+                sqlSB.append("SELECT MOVIE_ID FROM ").append(table);
+                sqlSB.append("\nWHERE ").append(columnName);
+                sqlSB.append(" ").append(tComparator.image);
+                sqlSB.append(" '").append(sComparand).append("'");
+        }
+
+
+       <LPAREN> { sqlSB.append("("); }
+       expression()
+       <RPAREN> { sqlSB.append(")"); }
+}
