@@ -1,0 +1,6 @@
+<form action="/contact/pure/" method="post">
+  <h1>pure contact form</h1>
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit" />
+</form>
