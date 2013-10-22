@@ -8,7 +8,11 @@ import com.google.common.base.Stopwatch;
 import com.google.common.base.Throwables;
 import com.google.common.collect.*;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -161,16 +165,6 @@ public class Guava {
 
         p("---");
 
-        // Iterables
-        List<Integer> numList = ImmutableList.of(1, 2, 3, 0, -1, -2, -3);
-        Number[] numbers;
-        numbers = Iterables.toArray(numList, Number.class);
-        p("%s", Joiner.on(", ").join(numbers));
-        numbers = numList.toArray(new Number[]{});
-        p("%s", Joiner.on(", ").join(numbers));
-
-        p("---");
-
         // List<String> -> Map<Integer, String>
         Map<String, String> strMap1 = Maps.uniqueIndex(ImmutableList.of("foo", "bar", "foobar"), new Function<String, String>() {
             @Override
@@ -190,7 +184,7 @@ public class Guava {
 
         p("---");
 
-        // List<String> -> Multimaps<String, String>
+        // List<String> -> Multimap<String, String>
         Multimap<String, String> strMultimap1 = Multimaps.index(ImmutableList.of("foo", "bar", "foobar", "foobar"), new Function<String, String>() {
             @Override
             public String apply(String str) {
@@ -213,12 +207,59 @@ public class Guava {
         p("%s", ImmutableListMultimap.of());
         p("%s", ImmutableSetMultimap.of());
 
+        p("%s", ImmutableList.of(1, 9, 0, 2, 8));
+        p("%s", ImmutableSet.of(1, 9, 0, 2, 8));
+        p("%s", ImmutableSortedSet.of(1, 9, 0, 2, 8));
+        p("%s", ImmutableMultiset.of(1, 1, 9, 0, 0, 2, 8, 8));
+        p("%s", ImmutableSortedMultiset.of(1, 1, 9, 0, 0, 2, 8, 8));
+
         p("---");
 
         // Ordering
         Ordering<String> caseless = Ordering.from(String.CASE_INSENSITIVE_ORDER);
         List<String> sortedCopy = caseless.sortedCopy(ImmutableSet.of("foo", "bar", "foobar", "barfoo"));
         p("%s", Joiner.on(", ").join(sortedCopy));
+
+        // Iterables
+        List<Integer> numList = ImmutableList.of(1, 2, 3, 0, -1, -2, -3);
+        Number[] numbers;
+        numbers = Iterables.toArray(numList, Number.class);
+        p("%s", Joiner.on(", ").join(numbers));
+        numbers = numList.toArray(new Number[]{});
+        p("%s", Joiner.on(", ").join(numbers));
+
+        p("---");
+
+        // AbstractIterator to create custom iterator
+        // here, we read the file Guava.java on demand as lines are requested
+        Iterator<String> thisFileIterator = new AbstractIterator<String>() {
+            final BufferedReader reader = new BufferedReader(new FileReader("Guava.java"));
+            @Override
+            protected String computeNext() {
+                try {
+                    String line = reader.readLine();
+                    if (line != null) {
+                        return line;
+                    }
+                    return endOfData();
+                } catch (IOException e) {
+                    throw Throwables.propagate(e);
+                }
+            }
+        };
+        p("%s", Joiner.on("\n").join(Iterators.limit(thisFileIterator, 8)));
+
+        p("---");
+
+        // ClassToInstanceMap - Map<Class<? extends T>, T>
+        // numberDefaults maps <? extends Number> type to value of that type
+        ClassToInstanceMap<Number> numberDefaults = ImmutableClassToInstanceMap.<Number>builder()
+                .put(Integer.class, 12)
+                .put(Long.class, 15L)
+                .build();
+        p("%d", numberDefaults.getInstance(Integer.class));
+        p("%f", numberDefaults.getInstance(Float.class));
+        p("%s", Joiner.on(", ").join(numberDefaults.values()));
 
         p("---");
     }
